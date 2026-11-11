@@ -34,10 +34,3 @@ HTML5, CSS3, Bootstrap 5.3.3, JavaScript, jQuery 3.7.1 and GitHub Pages. Bootstr
 | Seitkapar Magzhan | Ratings and Trailers pages, ratings table. |
 | Korganbek Madiyar | Reviews page, form and responsive styles. |
 
-## Run locally
-
-Open the project in VS Code and start Live Server on `index.html`. Internet access is needed for the CDN libraries.
-
-Registration demonstrates validation only; it does not create an account or save passwords. Ratings and reviews stay in the current browser and are not shared publicly.
-
-Film artwork and trailer sources are listed in `SOURCES.txt`.
