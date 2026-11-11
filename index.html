@@ -12,6 +12,7 @@
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
+        <a class="skip-link" href="#main-content">Skip to content</a>
         <header class="site-header">
             <div class="container header-content">
                 <a class="brand" href="index.html">
@@ -20,10 +21,10 @@
                     </span>
                     FRAME
                 </a>
-                <nav>
+                <nav aria-label="Main navigation">
                     <ul class="nav-list">
                         <li>
-                            <a class="current" href="index.html">
+                            <a class="current" aria-current="page" href="index.html">
                                 Home
                             </a>
                         </li>
@@ -47,11 +48,12 @@
                                 Reviews
                             </a>
                         </li>
+                    <li><a class="nav-join" href="index.html#join">Join the club <span aria-hidden="true"><svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M5 19 19 5M5 5h14v14"/></svg></span></a></li>
                     </ul>
                 </nav>
             </div>
         </header>
-        <main class="container">
+        <main class="container" id="main-content">
             <section class="hero row align-items-center">
                 <div class="col-12 col-md-7 hero-copy">
                     <p class="eyebrow">
@@ -154,6 +156,53 @@
                     </article>
                 </div>
             </section>
+
+        <section class="join-section home-section row g-5" id="join" aria-labelledby="join-title">
+            <div class="col-12 col-lg-5">
+                <p class="eyebrow">THE CONVERSATION CONTINUES</p>
+                <h2 id="join-title" class="section-display">Good films.<br>Better conversations.</h2>
+                <p class="muted">A place for curious film lovers. Explore a story, keep your own scorecard and share what stayed with you.</p>
+                <p class="small-note">Try our registration form. This student demo checks your details without creating an account. Your name, email and password are not saved or sent.</p>
+                <a class="text-link" href="reviews.html">Read the conversation <span aria-hidden="true"><svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M5 19 19 5M5 5h14v14"/></svg></span></a>
+            </div>
+            <div class="col-12 col-lg-7">
+                <form id="registration-form" class="panel-form" novalidate>
+                    <h3>Join the film club</h3>
+                    <p class="field-hint">All fields are required.</p>
+                    <div class="form-grid">
+                    <div class="field">
+        <label for="member-name">Your name</label>
+        <input type="text" id="member-name" required autocomplete="name" maxlength="80" placeholder="Your name" aria-describedby="member-name-error">
+        <p class="field-message" id="member-name-error" aria-live="polite"></p>
+    </div><div class="field">
+        <label for="member-email">Email address</label>
+        <input type="email" id="member-email" required autocomplete="email" maxlength="254" placeholder="you@example.com" aria-describedby="member-email-error">
+        <p class="field-message" id="member-email-error" aria-live="polite"></p>
+    </div>
+                    </div>
+                    <div class="field">
+        <label for="member-password">Password</label>
+        <input type="password" id="member-password" required autocomplete="new-password" maxlength="128" aria-describedby="member-password-error member-password-hint">
+        <p class="field-hint" id="member-password-hint">Use at least 8 characters, including a letter and a number. For Strong, use 12+ characters with uppercase, lowercase, a number and a symbol.</p><p class="field-message" id="member-password-error" aria-live="polite"></p>
+    </div>
+                    <div class="password-strength">
+                        <meter id="password-meter" min="0" max="3" value="0" aria-label="Password strength"></meter>
+                        <span id="password-strength-label" aria-live="polite">Enter a password</span>
+                    </div>
+                    <div class="field">
+        <label for="member-confirm">Confirm password</label>
+        <input type="password" id="member-confirm" required autocomplete="new-password" maxlength="128" aria-describedby="member-confirm-error">
+        <p class="field-message" id="member-confirm-error" aria-live="polite"></p>
+    </div>
+                    <button class="plain-button password-toggle" id="password-toggle" type="button" aria-pressed="false" aria-controls="member-password member-confirm">Show passwords</button>
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-warning" disabled>Register <span aria-hidden="true"><svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M5 19 19 5M5 5h14v14"/></svg></span></button>
+                        <button type="reset" class="btn btn-outline-light">Clear form</button>
+                    </div>
+                    <p class="form-status" id="registration-status" role="status"></p>
+                </form>
+            </div>
+        </section>
         </main>
         <footer class="site-footer">
             <div class="container footer-content">
@@ -184,5 +233,8 @@
                 © 2026 FRAME · Student movie website. Film artwork belongs to its owners.
             </div>
         </footer>
+        <noscript><p class="container noscript-note">Enable JavaScript to use registration, search, the gallery and your saved ratings.</p></noscript>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous" defer></script>
+        <script src="js/script.js" defer></script>
     </body>
 </html>

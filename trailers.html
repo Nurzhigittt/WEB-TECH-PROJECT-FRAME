@@ -12,6 +12,7 @@
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
+        <a class="skip-link" href="#main-content">Skip to content</a>
         <header class="site-header">
             <div class="container header-content">
                 <a class="brand" href="index.html">
@@ -20,7 +21,7 @@
                     </span>
                     FRAME
                 </a>
-                <nav>
+                <nav aria-label="Main navigation">
                     <ul class="nav-list">
                         <li>
                             <a href="index.html">
@@ -38,7 +39,7 @@
                             </a>
                         </li>
                         <li>
-                            <a class="current" href="trailers.html">
+                            <a class="current" aria-current="page" href="trailers.html">
                                 Trailers
                             </a>
                         </li>
@@ -47,11 +48,12 @@
                                 Reviews
                             </a>
                         </li>
+                    <li><a class="nav-join" href="index.html#join">Join the club <span aria-hidden="true"><svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M5 19 19 5M5 5h14v14"/></svg></span></a></li>
                     </ul>
                 </nav>
             </div>
         </header>
-        <main class="container">
+        <main class="container" id="main-content">
             <section class="page-intro">
                 <p class="eyebrow">
                     A FIRST LOOK
@@ -159,5 +161,8 @@
                 © 2026 FRAME · Student movie website. Film artwork belongs to its owners.
             </div>
         </footer>
+        <noscript><p class="container noscript-note">Enable JavaScript to use registration, search, the gallery and your saved ratings.</p></noscript>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous" defer></script>
+        <script src="js/script.js" defer></script>
     </body>
 </html>

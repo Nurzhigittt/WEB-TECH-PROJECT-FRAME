@@ -12,6 +12,7 @@
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
+        <a class="skip-link" href="#main-content">Skip to content</a>
         <header class="site-header">
             <div class="container header-content">
                 <a class="brand" href="index.html">
@@ -20,7 +21,7 @@
                     </span>
                     FRAME
                 </a>
-                <nav>
+                <nav aria-label="Main navigation">
                     <ul class="nav-list">
                         <li>
                             <a href="index.html">
@@ -33,7 +34,7 @@
                             </a>
                         </li>
                         <li>
-                            <a class="current" href="ratings.html">
+                            <a class="current" aria-current="page" href="ratings.html">
                                 Ratings
                             </a>
                         </li>
@@ -47,11 +48,12 @@
                                 Reviews
                             </a>
                         </li>
+                    <li><a class="nav-join" href="index.html#join">Join the club <span aria-hidden="true"><svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M5 19 19 5M5 5h14v14"/></svg></span></a></li>
                     </ul>
                 </nav>
             </div>
         </header>
-        <main class="container">
+        <main class="container" id="main-content">
             <section class="page-intro">
                 <p class="eyebrow">
                     AT A GLANCE
@@ -60,7 +62,7 @@
                     Ratings
                 </h1>
                 <p>
-                    A quick comparison of the films in our collection.
+                    Your collection, your point of view. Build a scorecard worth coming back to.
                 </p>
             </section>
             <section>
@@ -68,12 +70,14 @@
                     The scorecard
                 </h2>
                 <p class="muted">
-                    Illustrative scores for this student project. These are sample values, not IMDb or audience ratings.
+                    Start with our sample scores, then make this table your own. Changes are saved in this browser. These are not IMDb or audience ratings.
                 </p>
-                <div class="table-wrap">
+                <div class="table-toolbar"><p id="ratings-count" class="results-count" role="status"></p><button type="button" class="btn btn-warning" id="add-movie">+ Add movie</button></div>
+                <p class="form-status" id="ratings-status" role="status"></p>
+                <div class="table-wrap" tabindex="0" role="region" aria-label="Movie ratings table, scroll horizontally on small screens">
                     <table class="ratings-table">
                         <caption>
-                            Three films, rated on a sample scale from 1 to 10.
+                            Your movie scorecard. Scores range from 0 to 10.
                         </caption>
                         <thead>
                             <tr>
@@ -90,69 +94,11 @@
                                     Genre
                                 </th>
                                 <th scope="col">
-                                    Sample score
+                                    Your score
                                 </th>
-                            </tr>
+                            <th scope="col">Actions</th></tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    01
-                                </td>
-                                <th scope="row">
-                                    <a href="movies.html#interstellar">
-                                        Interstellar
-                                    </a>
-                                </th>
-                                <td>
-                                    2014
-                                </td>
-                                <td>
-                                    Science fiction
-                                </td>
-                                <td class="rating-score">
-                                    9.0 / 10
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    02
-                                </td>
-                                <th scope="row">
-                                    <a href="movies.html#inception">
-                                        Inception
-                                    </a>
-                                </th>
-                                <td>
-                                    2010
-                                </td>
-                                <td>
-                                    Science fiction / thriller
-                                </td>
-                                <td class="rating-score">
-                                    8.8 / 10
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    03
-                                </td>
-                                <th scope="row">
-                                    <a href="movies.html#dune">
-                                        Dune
-                                    </a>
-                                </th>
-                                <td>
-                                    2021
-                                </td>
-                                <td>
-                                    Science fiction / adventure
-                                </td>
-                                <td class="rating-score">
-                                    8.3 / 10
-                                </td>
-                            </tr>
-                        </tbody>
+                        <tbody id="ratings-body"></tbody>
                     </table>
                 </div>
             </section>
@@ -191,6 +137,33 @@
                     </a>
                 </div>
             </section>
+
+            <dialog id="movie-dialog" class="form-dialog" aria-labelledby="movie-dialog-title">
+                <div class="dialog-header"><h2 id="movie-dialog-title">Add a movie</h2><button type="button" class="icon-button" data-close="movie-dialog" aria-label="Close movie form">×</button></div>
+                <form id="movie-form" novalidate>
+                    <p class="field-hint">All fields are required.</p>
+                    <div class="field">
+        <label for="rating-title">Movie title</label>
+        <input type="text" id="rating-title" name="rating-title" required maxlength="100" autofocus aria-describedby="rating-title-error">
+        <p class="field-message" id="rating-title-error" aria-live="polite"></p>
+    </div>
+                    <div class="form-grid"><div class="field">
+        <label for="rating-year">Release year</label>
+        <input type="number" id="rating-year" name="rating-year" required min="1888" max="2100" step="1" aria-describedby="rating-year-error">
+        <p class="field-message" id="rating-year-error" aria-live="polite"></p>
+    </div><div class="field">
+        <label for="rating-score">Your score</label>
+        <input type="number" id="rating-score" name="rating-score" required min="0" max="10" step="0.1" aria-describedby="rating-score-error rating-score-hint">
+        <p class="field-hint" id="rating-score-hint">A score from 0 to 10, with at most one decimal place.</p><p class="field-message" id="rating-score-error" aria-live="polite"></p>
+    </div>
+                    </div><div class="field"><label for="rating-genre">Genre</label><select id="rating-genre" required aria-describedby="rating-genre-error"><option value="">Choose a genre</option><option>Science fiction</option><option>Thriller</option><option>Adventure</option><option>Drama</option><option>Comedy</option><option>Action</option><option>Animation</option><option>Documentary</option><option>Other</option></select><p id="rating-genre-error" class="field-message" aria-live="polite"></p></div>
+                    <div class="form-actions"><button type="submit" id="save-movie" class="btn btn-warning">Add movie</button><button type="button" class="btn btn-outline-light" data-close="movie-dialog">Cancel</button></div>
+                </form>
+            </dialog>
+            <dialog id="delete-dialog" class="form-dialog confirm-dialog" aria-labelledby="delete-title" aria-describedby="delete-description">
+                <p class="eyebrow">YOUR SCORECARD</p><h2 id="delete-title">Delete this movie?</h2><p id="delete-description"></p>
+                <div class="form-actions"><button type="button" class="btn btn-outline-light" data-close="delete-dialog" autofocus>Keep movie</button><button type="button" class="btn btn-danger" id="confirm-delete">Delete movie</button></div>
+            </dialog>
         </main>
         <footer class="site-footer">
             <div class="container footer-content">
@@ -221,5 +194,8 @@
                 © 2026 FRAME · Student movie website. Film artwork belongs to its owners.
             </div>
         </footer>
+        <noscript><p class="container noscript-note">Enable JavaScript to use registration, search, the gallery and your saved ratings.</p></noscript>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous" defer></script>
+        <script src="js/script.js" defer></script>
     </body>
 </html>

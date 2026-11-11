@@ -12,6 +12,7 @@
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
+        <a class="skip-link" href="#main-content">Skip to content</a>
         <header class="site-header">
             <div class="container header-content">
                 <a class="brand" href="index.html">
@@ -20,7 +21,7 @@
                     </span>
                     FRAME
                 </a>
-                <nav>
+                <nav aria-label="Main navigation">
                     <ul class="nav-list">
                         <li>
                             <a href="index.html">
@@ -43,15 +44,16 @@
                             </a>
                         </li>
                         <li>
-                            <a class="current" href="reviews.html">
+                            <a class="current" aria-current="page" href="reviews.html">
                                 Reviews
                             </a>
                         </li>
+                    <li><a class="nav-join" href="index.html#join">Join the club <span aria-hidden="true"><svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M5 19 19 5M5 5h14v14"/></svg></span></a></li>
                     </ul>
                 </nav>
             </div>
         </header>
-        <main class="container">
+        <main class="container" id="main-content">
             <section class="page-intro">
                 <p class="eyebrow">
                     AFTER THE CREDITS
@@ -114,27 +116,28 @@
                             Sample editorial review
                         </span>
                     </article>
-                </section>
+                <section class="personal-reviews" aria-labelledby="personal-reviews-title"><p class="eyebrow">YOUR OWN TAKE</p><h2 id="personal-reviews-title">Saved on this device</h2><div id="personal-reviews-list"></div></section></section>
                 <section class="col-12 col-lg-5">
                     <div class="review-form-box">
                         <p class="eyebrow">
                             YOUR POINT OF VIEW
                         </p>
                         <h2 id="form-title">
-                            Draft a review
+                            Write a review
                         </h2>
                         <p id="form-note" class="muted">
-                            Practice form: nothing is sent or saved. Copy your text before leaving this page.
+                            Your review stays in this browser. It is not posted publicly. All fields are required.
                         </p>
-                        <form id="review-form">
+                        <form id="review-form" novalidate>
                             <label for="reviewer">
                                 Your name
                             </label>
-                            <input type="text" id="reviewer" placeholder="Enter your name">
+                            <input type="text" id="reviewer" placeholder="Enter your name" autocomplete="name" maxlength="80" required aria-describedby="reviewer-error"><p id="reviewer-error" class="field-message" aria-live="polite"></p>
+                            <label for="review-email">Email address</label><input type="email" id="review-email" placeholder="you@example.com" autocomplete="email" maxlength="254" required aria-describedby="review-email-error review-email-hint"><p id="review-email-hint" class="field-hint">Used for validation only. Never saved or displayed.</p><p id="review-email-error" class="field-message" aria-live="polite"></p>
                             <label for="movie">
                                 Movie
                             </label>
-                            <select id="movie">
+                            <select id="movie" required>
                                 <option>
                                     Interstellar
                                 </option>
@@ -148,53 +151,33 @@
                             <label for="score">
                                 Your rating
                             </label>
-                            <select id="score">
+                            <select id="score" required aria-describedby="score-error">
                                 <option value="">
                                     Choose a score
                                 </option>
-                                <option>
-                                    1 / 10
-                                </option>
-                                <option>
-                                    2 / 10
-                                </option>
-                                <option>
-                                    3 / 10
-                                </option>
-                                <option>
-                                    4 / 10
-                                </option>
-                                <option>
-                                    5 / 10
-                                </option>
-                                <option>
-                                    6 / 10
-                                </option>
-                                <option>
-                                    7 / 10
-                                </option>
-                                <option>
-                                    8 / 10
-                                </option>
-                                <option>
-                                    9 / 10
-                                </option>
-                                <option>
-                                    10 / 10
-                                </option>
+                                <option value="1">1 / 10</option>
+                                <option value="2">2 / 10</option>
+                                <option value="3">3 / 10</option>
+                                <option value="4">4 / 10</option>
+                                <option value="5">5 / 10</option>
+                                <option value="6">6 / 10</option>
+                                <option value="7">7 / 10</option>
+                                <option value="8">8 / 10</option>
+                                <option value="9">9 / 10</option>
+                                <option value="10">10 / 10</option>
                             </select>
-                            <label for="review">
+                            <p id="score-error" class="field-message" aria-live="polite"></p><label for="review">
                                 Your review
                             </label>
-                            <textarea id="review" rows="5" placeholder="What did you think of the film?"></textarea>
+                            <textarea id="review" rows="5" maxlength="1000" required placeholder="What did you think of the film?" aria-describedby="review-error review-length"></textarea><p id="review-length" class="field-hint">0 / 1000 characters</p><p id="review-error" class="field-message" aria-live="polite"></p><button type="submit" class="btn btn-warning mt-3" disabled>Save review</button>
                             <button type="reset" class="btn btn-outline-light mt-3">
-                                Clear draft
+                                Clear form
                             </button>
-                        </form>
+                        <p id="review-status" class="form-status" role="status"></p></form>
                     </div>
                 </section>
             </div>
-        </main>
+        <dialog id="delete-review-dialog" class="form-dialog confirm-dialog" aria-labelledby="delete-review-title"><h2 id="delete-review-title">Delete your review?</h2><p id="delete-review-description"></p><div class="form-actions"><button type="button" class="btn btn-outline-light" data-close="delete-review-dialog" autofocus>Keep review</button><button type="button" class="btn btn-danger" id="confirm-delete-review">Delete review</button></div></dialog></main>
         <footer class="site-footer">
             <div class="container footer-content">
                 <div>
@@ -224,5 +207,8 @@
                 © 2026 FRAME · Student movie website. Film artwork belongs to its owners.
             </div>
         </footer>
+        <noscript><p class="container noscript-note">Enable JavaScript to use registration, search, the gallery and your saved ratings.</p></noscript>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous" defer></script>
+        <script src="js/script.js" defer></script>
     </body>
 </html>
