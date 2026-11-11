@@ -1,12 +1,10 @@
-/* FRAME endterm: form validation, live search, CRUD and a jQuery gallery.
-   Each initializer checks its page element, so this file can serve all five pages. */
+
 "use strict";
 
 $(document).ready(function () {
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-    // Shared form helpers. User-entered strings are always inserted with .text().
     function feedback(id, message) {
         const input = $("#" + id);
         input.toggleClass("is-invalid", Boolean(message));
@@ -29,7 +27,6 @@ $(document).ready(function () {
         return value.length <= 254 && emailPattern.test(value);
     }
 
-    // A failed or disabled storage service must not stop the current session.
     function readRecords(key, defaults, validRecord) {
         try {
             const stored = localStorage.getItem(key);
@@ -58,7 +55,6 @@ $(document).ready(function () {
         return records.reduce(function (highest, record) { return Math.max(highest, record.id); }, 0) + 1;
     }
 
-    // Native dialogs supply focus trapping and Escape support.
     $("[data-close]").on("click", function () {
         document.getElementById($(this).attr("data-close")).close();
     });
@@ -68,7 +64,6 @@ $(document).ready(function () {
             event.clientY < box.top || event.clientY > box.bottom)) this.close();
     });
 
-    // 1. Registration: required fields, RegEx email, strength and matching passwords.
     function initRegistration() {
         const form = document.getElementById("registration-form");
         if (!form) return;
@@ -140,7 +135,6 @@ $(document).ready(function () {
         $(form).find("button[type='submit']").prop("disabled", false);
     }
 
-    // 2. Search and category filters work together without reloading the page.
     function initSearch() {
         if (!document.getElementById("movie-search")) return;
         let category = "all";
@@ -173,7 +167,6 @@ $(document).ready(function () {
         filterMovies();
     }
 
-    // 3. CRUD: an array is the data source; renderRatings rebuilds the table.
     function initRatings() {
         if (!document.getElementById("ratings-body")) return;
         const storageKey = "frame.ratings.v1";
@@ -289,7 +282,6 @@ $(document).ready(function () {
         if (loaded.warning) status("ratings-status", loaded.warning, true);
     }
 
-    // 4. Poster lightbox: jQuery fades, circular navigation and keyboard controls.
     function initGallery() {
         const dialog = document.getElementById("lightbox");
         if (!dialog) return;
@@ -307,7 +299,6 @@ $(document).ready(function () {
         }
         function move(direction) {
             if (closing) return;
-            // Finish the previous fade first, so rapid clicks do not queue old images.
             $("#lightbox-image").stop(true, true);
             current = (current + direction + posters.length) % posters.length;
             $("#lightbox-image").fadeOut(duration, function () { paintPoster(); $(this).fadeIn(duration); });
@@ -343,7 +334,6 @@ $(document).ready(function () {
         $(dialog).on("close", function () { $("#lightbox-image").stop(true, true); });
     }
 
-    // The original review page now accepts validated, browser-local reviews.
     function initReviews() {
         const form = document.getElementById("review-form");
         if (!form) return;
