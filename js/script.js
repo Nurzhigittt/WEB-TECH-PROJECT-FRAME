@@ -1,4 +1,3 @@
-
 "use strict";
 
 $(document).ready(function () {
@@ -13,7 +12,6 @@ $(document).ready(function () {
         $("#" + id + "-error").text(message || "Looks good.").toggleClass("valid-message", !message);
         return !message;
     }
-
     function clearFeedback(form) {
         $(form).find(".is-invalid, .is-valid").removeClass("is-invalid is-valid").removeAttr("aria-invalid");
         $(form).find(".field-message").text("").removeClass("valid-message");
@@ -22,11 +20,9 @@ $(document).ready(function () {
     function status(id, message, warning) {
         $("#" + id).text(message).toggleClass("status-warning", Boolean(warning));
     }
-
     function validEmail(value) {
         return value.length <= 254 && emailPattern.test(value);
     }
-
     function readRecords(key, defaults, validRecord) {
         try {
             const stored = localStorage.getItem(key);
