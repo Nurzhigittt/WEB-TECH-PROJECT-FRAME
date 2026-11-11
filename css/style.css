@@ -538,7 +538,7 @@ a:focus, button:focus, input:focus, select:focus, textarea:focus {
     }
 }
 
-/* Endterm interactions — extend the original FRAME colour and layout system. */
+
 html { scroll-behavior: smooth; color-scheme: dark; }
 [hidden] { display: none !important; }
 ::selection { background: #f2ca68; color: #111318; }
