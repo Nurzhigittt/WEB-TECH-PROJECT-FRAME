@@ -1,222 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="FRAME movie guide: film information, sample ratings, official trailers and short reviews.">
-        <title>
-            Movies | FRAME
-        </title>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap">
-        <link rel="stylesheet" href="css/style.css">
-    </head>
-    <body>
-        <a class="skip-link" href="#main-content">Skip to content</a>
-        <header class="site-header">
-            <div class="container header-content">
-                <a class="brand" href="index.html">
-                    <span class="brand-mark">
-                        F
-                    </span>
-                    FRAME
-                </a>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="FRAME: a student movie guide with films, personal ratings, trailers and reviews.">
+    <title>Movies | FRAME</title>
+    <link rel="stylesheet" href="vendor/bootstrap-5.3.3.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-row">
+                <a class="brand" href="index.html"><span>F</span>FRAME</a>
                 <nav aria-label="Main navigation">
-                    <ul class="nav-list">
-                        <li>
-                            <a href="index.html">
-                                Home
-                            </a>
-                        </li>
-                        <li>
-                            <a class="current" aria-current="page" href="movies.html">
-                                Movies
-                            </a>
-                        </li>
-                        <li>
-                            <a href="ratings.html">
-                                Ratings
-                            </a>
-                        </li>
-                        <li>
-                            <a href="trailers.html">
-                                Trailers
-                            </a>
-                        </li>
-                        <li>
-                            <a href="reviews.html">
-                                Reviews
-                            </a>
-                        </li>
-                    <li><a class="nav-join" href="index.html#join">Join the club <span aria-hidden="true"><svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M5 19 19 5M5 5h14v14"/></svg></span></a></li>
+                    <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a class="current" aria-current="page" href="movies.html">Movies</a></li>
+                <li><a href="discover.html">Discover</a></li>
+                <li><a href="ratings.html">Ratings</a></li>
+                <li><a href="trailers.html">Trailers</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
                     </ul>
                 </nav>
-            </div>
-        </header>
-        <main class="container" id="main-content">
-            <section class="page-intro">
-                <p class="eyebrow">
-                    THE COLLECTION
-                </p>
-                <h1>
-                    Movies
-                </h1>
-                <p>
-                    Start with a story that catches your attention.
-                </p>
-            </section>
-            <section class="search-section" aria-label="Find a film">
-                <label class="search-label" for="movie-search">Find your next film</label>
-                <div class="search-row">
-                    <input type="search" id="movie-search" placeholder="Search by title, director, year or genre…" autocomplete="off" aria-controls="movie-results">
-                    <button type="button" class="btn btn-outline-light" id="reset-filters">Reset filters</button>
+                <div class="actions">
+                    <button id="theme-button" type="button">Light mode</button>
+                    <span id="greeting"></span>
+                    <button id="signin-button" type="button" aria-controls="signin-panel" aria-expanded="false">Sign in</button>
+                    <button id="signout-button" type="button" hidden>Sign out</button>
                 </div>
-                <div class="filter-row" role="group" aria-label="Filter by genre">
-                    <button type="button" class="filter-button active" data-category="all" aria-pressed="true">All films</button>
-                    <button type="button" class="filter-button" data-category="science-fiction" aria-pressed="false">Science fiction</button>
-                    <button type="button" class="filter-button" data-category="thriller" aria-pressed="false">Thriller</button>
-                    <button type="button" class="filter-button" data-category="adventure" aria-pressed="false">Adventure</button>
-                </div>
-                <p class="results-count" id="search-count" role="status">3 films in the collection</p>
-            </section>
-            <div class="movie-grid" id="movie-results">
-                <article class="movie-card" id="interstellar" data-categories="science-fiction">
-                    <a href="trailers.html#interstellar-trailer">
-                        <img class="movie-poster" src="interstellar.jpg" alt="Interstellar film poster" width="555" height="833">
-                    </a>
-                    <div class="movie-meta">
-                        <span>
-                            2014
-                        </span>
-                        <span>
-                            Science fiction
-                        </span>
-                    </div>
-                    <h2>
-                        Interstellar
-                    </h2>
-                    <p class="director">
-                        Directed by Christopher Nolan
-                    </p>
-                    <p>
-                        A team of explorers travels beyond our solar system to look for a future for humanity. At the heart of the journey is a father trying to return to his children.
-                    </p>
-                    <div class="movie-links">
-                        <a href="trailers.html#interstellar-trailer">
-                            Watch trailer
-                        </a>
-                        <a href="reviews.html#interstellar-review">
-                            Read review
-                        </a>
-                    </div>
-                </article>
-                <article class="movie-card" id="inception" data-categories="science-fiction thriller">
-                    <a href="trailers.html#inception-trailer">
-                        <img class="movie-poster" loading="lazy" src="inception.jpg" alt="Inception film poster" width="256" height="384">
-                    </a>
-                    <div class="movie-meta">
-                        <span>
-                            2010
-                        </span>
-                        <span>
-                            Science fiction / thriller
-                        </span>
-                    </div>
-                    <h2>
-                        Inception
-                    </h2>
-                    <p class="director">
-                        Directed by Christopher Nolan
-                    </p>
-                    <p>
-                        A skilled thief enters dreams to steal secrets. His next assignment reverses the rules: he must plant an idea deep inside someone else’s mind.
-                    </p>
-                    <div class="movie-links">
-                        <a href="trailers.html#inception-trailer">
-                            Watch trailer
-                        </a>
-                        <a href="reviews.html#inception-review">
-                            Read review
-                        </a>
-                    </div>
-                </article>
-                <article class="movie-card" id="dune" data-categories="science-fiction adventure">
-                    <a href="trailers.html#dune-trailer">
-                        <img class="movie-poster" loading="lazy" src="dune.jpg" alt="Dune film poster" width="414" height="621">
-                    </a>
-                    <div class="movie-meta">
-                        <span>
-                            2021
-                        </span>
-                        <span>
-                            Science fiction / adventure
-                        </span>
-                    </div>
-                    <h2>
-                        Dune
-                    </h2>
-                    <p class="director">
-                        Directed by Denis Villeneuve
-                    </p>
-                    <p>
-                        Paul Atreides arrives on the desert planet Arrakis with his family. Rival powers compete for control of its precious resource, and Paul faces an uncertain future.
-                    </p>
-                    <div class="movie-links">
-                        <a href="trailers.html#dune-trailer">
-                            Watch trailer
-                        </a>
-                        <a href="reviews.html#dune-review">
-                            Read review
-                        </a>
-                    </div>
-                </article>
             </div>
+        </div>
+    </header>
 
-            <div class="empty-state" id="search-empty" hidden><h2>No films found</h2><p>Try another title or choose a different genre.</p></div>
-            <section class="home-section gallery-section" aria-labelledby="gallery-title">
-                <div class="section-heading"><div><p class="eyebrow">BEYOND THE TITLE</p><h2 id="gallery-title">The poster collection</h2></div><p class="muted">Three worlds, up close. Select a poster to explore.</p></div>
-                <div class="row g-4 row-cols-1 row-cols-sm-3">
-<div class="col"><button type="button" class="gallery-item" data-gallery-index="0" data-title="Interstellar" aria-label="Enlarge Interstellar poster" aria-haspopup="dialog"><span class="gallery-image"><img src="interstellar.jpg" alt="Interstellar film poster" loading="lazy"><span class="gallery-zoom" aria-hidden="true"><svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M5 19 19 5M5 5h14v14"/></svg></span></span><span class="gallery-title">Interstellar</span><span class="muted">Beyond Earth · 2014</span></button></div><div class="col"><button type="button" class="gallery-item" data-gallery-index="1" data-title="Inception" aria-label="Enlarge Inception poster" aria-haspopup="dialog"><span class="gallery-image"><img src="inception.jpg" alt="Inception film poster" loading="lazy"><span class="gallery-zoom" aria-hidden="true"><svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M5 19 19 5M5 5h14v14"/></svg></span></span><span class="gallery-title">Inception</span><span class="muted">Inside the mind · 2010</span></button></div><div class="col"><button type="button" class="gallery-item" data-gallery-index="2" data-title="Dune" aria-label="Enlarge Dune poster" aria-haspopup="dialog"><span class="gallery-image"><img src="dune.jpg" alt="Dune film poster" loading="lazy"><span class="gallery-zoom" aria-hidden="true"><svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M5 19 19 5M5 5h14v14"/></svg></span></span><span class="gallery-title">Dune</span><span class="muted">Across the desert · 2021</span></button></div></div></section>
-            <dialog id="lightbox" class="lightbox" aria-labelledby="lightbox-title">
-                <div class="lightbox-panel">
-                    <div class="lightbox-header"><p class="eyebrow" id="lightbox-title">The poster collection</p><button type="button" class="icon-button" id="lightbox-close" aria-label="Close gallery" autofocus>×</button></div>
-                    <img id="lightbox-image" src="interstellar.jpg" alt="Interstellar film poster">
-                    <div class="lightbox-controls"><button type="button" class="icon-button" id="lightbox-prev" aria-label="Previous image">←</button><p id="lightbox-caption" aria-live="polite"></p><button type="button" class="icon-button" id="lightbox-next" aria-label="Next image">→</button></div>
-                    <p class="field-hint text-center">Use ← → to explore · Esc to close</p>
+    <!-- The same sign-in form and main.js are used on all six pages. -->
+    <div class="container">
+        <p id="account-status" class="status" role="status"></p>
+        <section id="signin-panel" class="panel" aria-labelledby="signin-title" hidden>
+            <h2 id="signin-title">Welcome to FRAME</h2>
+            <p class="muted">A local demo profile. Only your name is saved in this browser; this is not a server account.</p>
+            <form id="signin-form">
+                <div class="field">
+                    <label for="signin-name">Your name</label>
+                    <input id="signin-name" type="text" required minlength="2" maxlength="40" autocomplete="given-name">
                 </div>
-            </dialog>
-        </main>
-        <footer class="site-footer">
-            <div class="container footer-content">
-                <div>
-                    <a class="brand footer-brand" href="index.html">
-                        FRAME
-                    </a>
-                    <p class="footer-note">
-                        A small collection of big-screen stories.
-                    </p>
-                    <p class="footer-note">
-                        Demo contact: movieclub@example.com
-                    </p>
+                <div class="field">
+                    <label for="signin-email">Email</label>
+                    <input id="signin-email" type="email" required maxlength="254" autocomplete="email" aria-describedby="email-note">
+                    <small id="email-note" class="muted">Checked for a valid format. Never saved or sent.</small>
                 </div>
-                <div class="footer-links">
-                    <p>
-                        Studio channels
-                    </p>
-                    <a href="https://www.youtube.com/user/WarnerBrosPictures/">
-                        Warner Bros. on YouTube
-                    </a>
-                    <a href="https://www.youtube.com/@paramountpictures">
-                        Paramount on YouTube
-                    </a>
+                <p id="signin-error" class="error" role="alert"></p>
+                <div class="actions">
+                    <button class="gold" type="submit">Continue</button>
+                    <button id="cancel-signin" type="button">Cancel</button>
                 </div>
+            </form>
+        </section>
+    </div>
+
+    <main id="main-content" class="container">
+        <section class="page-intro">
+            <p class="eyebrow">THE COLLECTION</p>
+            <h1>Movies</h1>
+            <p>Start with a story that catches your attention.</p>
+        </section>
+        <section aria-label="Find a movie">
+            <label for="movie-search">Search by title, director, year or genre</label>
+            <div class="search-row"><input id="movie-search" type="search" placeholder="Try Inception or Nolan"><button id="clear-search" type="button">Clear search</button></div>
+            <p id="movie-count" class="status" role="status">3 films found.</p>
+        </section>
+        <div class="grid">
+            <article class="movie-card" id="interstellar">
+                <a href="trailers.html#interstellar-trailer"><img src="interstellar.jpg" alt="Interstellar film poster" loading="lazy"></a>
+                <div class="meta"><span>2014</span><span>Science fiction</span></div>
+                <h2>Interstellar</h2>
+                <p>Directed by Christopher Nolan</p>
+                <p>A team of explorers travels beyond our solar system to find a future for humanity. A father holds on to his promise to return home.</p>
+                <div class="actions"><a href="trailers.html#interstellar-trailer">Watch trailer</a><a href="reviews.html#interstellar-review">Read review</a></div>
+            </article>
+            <article class="movie-card" id="inception">
+                <a href="trailers.html#inception-trailer"><img src="inception.jpg" alt="Inception film poster" loading="lazy"></a>
+                <div class="meta"><span>2010</span><span>Science fiction / thriller</span></div>
+                <h2>Inception</h2>
+                <p>Directed by Christopher Nolan</p>
+                <p>A thief enters dreams to steal secrets. His next assignment changes the rules: he must plant an idea deep inside someone else’s mind.</p>
+                <div class="actions"><a href="trailers.html#inception-trailer">Watch trailer</a><a href="reviews.html#inception-review">Read review</a></div>
+            </article>
+            <article class="movie-card" id="dune">
+                <a href="trailers.html#dune-trailer"><img src="dune.jpg" alt="Dune film poster" loading="lazy"></a>
+                <div class="meta"><span>2021</span><span>Science fiction / adventure</span></div>
+                <h2>Dune</h2>
+                <p>Directed by Denis Villeneuve</p>
+                <p>Paul Atreides arrives on the desert planet Arrakis. Rival powers fight for its precious resource, and Paul faces an uncertain future.</p>
+                <div class="actions"><a href="trailers.html#dune-trailer">Watch trailer</a><a href="reviews.html#dune-review">Read review</a></div>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-row">
+                <a class="brand" href="index.html">FRAME</a>
+                <p>AITU · Web Technologies · Group film project</p>
+                <a href="SOURCES.txt">Sources</a>
             </div>
-            <div class="container copyright text-center">
-                © 2026 FRAME · Student movie website. Film artwork belongs to its owners.
-            </div>
-        </footer>
-        <noscript><p class="container noscript-note">Enable JavaScript to use registration, search, the gallery and your saved ratings.</p></noscript>
-        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous" defer></script>
-        <script src="js/script.js" defer></script>
-    </body>
+            <p class="ai-credit">AI assistance: OpenAI ChatGPT/Codex helped with code, debugging and documentation.
+                <a href="docs/PROJECT_REPORT.pdf">Project report</a></p>
+        </div>
+    </footer>
+
+    <!-- Load jQuery before the scripts that use it. -->
+    <script src="vendor/jquery-3.7.1.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/movies.js"></script>
+</body>
 </html>
