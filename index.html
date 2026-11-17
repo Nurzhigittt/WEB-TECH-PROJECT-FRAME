@@ -1,240 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="FRAME movie guide: film information, sample ratings, official trailers and short reviews.">
-        <title>
-            Home | FRAME
-        </title>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap">
-        <link rel="stylesheet" href="css/style.css">
-    </head>
-    <body>
-        <a class="skip-link" href="#main-content">Skip to content</a>
-        <header class="site-header">
-            <div class="container header-content">
-                <a class="brand" href="index.html">
-                    <span class="brand-mark">
-                        F
-                    </span>
-                    FRAME
-                </a>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="FRAME: a student movie guide with films, personal ratings, trailers and reviews.">
+    <title>Home | FRAME</title>
+    <link rel="stylesheet" href="vendor/bootstrap-5.3.3.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-row">
+                <a class="brand" href="index.html"><span>F</span>FRAME</a>
                 <nav aria-label="Main navigation">
-                    <ul class="nav-list">
-                        <li>
-                            <a class="current" aria-current="page" href="index.html">
-                                Home
-                            </a>
-                        </li>
-                        <li>
-                            <a href="movies.html">
-                                Movies
-                            </a>
-                        </li>
-                        <li>
-                            <a href="ratings.html">
-                                Ratings
-                            </a>
-                        </li>
-                        <li>
-                            <a href="trailers.html">
-                                Trailers
-                            </a>
-                        </li>
-                        <li>
-                            <a href="reviews.html">
-                                Reviews
-                            </a>
-                        </li>
-                    <li><a class="nav-join" href="index.html#join">Join the club <span aria-hidden="true"><svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M5 19 19 5M5 5h14v14"/></svg></span></a></li>
+                    <ul class="nav-links">
+                <li><a class="current" aria-current="page" href="index.html">Home</a></li>
+                <li><a href="movies.html">Movies</a></li>
+                <li><a href="discover.html">Discover</a></li>
+                <li><a href="ratings.html">Ratings</a></li>
+                <li><a href="trailers.html">Trailers</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
                     </ul>
                 </nav>
+                <div class="actions">
+                    <button id="theme-button" type="button">Light mode</button>
+                    <span id="greeting"></span>
+                    <button id="signin-button" type="button" aria-controls="signin-panel" aria-expanded="false">Sign in</button>
+                    <button id="signout-button" type="button" hidden>Sign out</button>
+                </div>
             </div>
-        </header>
-        <main class="container" id="main-content">
-            <section class="hero row align-items-center">
-                <div class="col-12 col-md-7 hero-copy">
-                    <p class="eyebrow">
-                        THE FRAME COLLECTION
-                    </p>
-                    <h1 id="home-title">
-                        Find your
-                        <br>
-                        next great film.
-                    </h1>
-                    <p class="hero-description">
-                        Three stories that take you somewhere else. Explore the films, compare our sample scores and watch the official trailers.
-                    </p>
-                    <div class="button-row">
-                        <a class="btn btn-warning" href="movies.html">
-                            Explore movies
-                        </a>
-                        <a class="text-link" href="trailers.html">
-                            Watch trailers
-                        </a>
-                    </div>
-                    <p class="hero-caption">
-                        SPACE. DREAMS. DISTANT WORLDS.
-                    </p>
-                </div>
-                <div class="col-12 col-md-5">
-                    <div class="featured-poster">
-                        <img src="interstellar.jpg" alt="Official Interstellar film poster" width="555" height="833">
-                        <span class="poster-label">
-                            IN THE SPOTLIGHT
-                        </span>
-                    </div>
-                    <div class="featured-caption">
-                        <span>
-                            Interstellar
-                        </span>
-                        <span>
-                            2014 · Christopher Nolan
-                        </span>
-                    </div>
-                </div>
-            </section>
-            <section class="home-section">
-                <div class="section-heading">
-                    <h2 id="collection-title">
-                        Inside the collection
-                    </h2>
-                    <span class="muted">
-                        03 films, three different worlds
-                    </span>
-                </div>
-                <div class="collection-grid">
-                    <article class="collection-item">
-                        <span class="item-number">
-                            01 / BEYOND EARTH
-                        </span>
-                        <h3>
-                            <a href="movies.html#interstellar">
-                                Interstellar
-                            </a>
-                        </h3>
-                        <p>
-                            A journey through space, anchored by a promise to come home.
-                        </p>
-                        <span class="muted">
-                            2014 · Science fiction
-                        </span>
-                    </article>
-                    <article class="collection-item">
-                        <span class="item-number">
-                            02 / INSIDE THE MIND
-                        </span>
-                        <h3>
-                            <a href="movies.html#inception">
-                                Inception
-                            </a>
-                        </h3>
-                        <p>
-                            A carefully planned heist where the rules change with every dream.
-                        </p>
-                        <span class="muted">
-                            2010 · Thriller
-                        </span>
-                    </article>
-                    <article class="collection-item">
-                        <span class="item-number">
-                            03 / ACROSS THE DESERT
-                        </span>
-                        <h3>
-                            <a href="movies.html#dune">
-                                Dune
-                            </a>
-                        </h3>
-                        <p>
-                            A family, a desert planet and a struggle for its future.
-                        </p>
-                        <span class="muted">
-                            2021 · Adventure
-                        </span>
-                    </article>
-                </div>
-            </section>
+        </div>
+    </header>
 
-        <section class="join-section home-section row g-5" id="join" aria-labelledby="join-title">
-            <div class="col-12 col-lg-5">
-                <p class="eyebrow">THE CONVERSATION CONTINUES</p>
-                <h2 id="join-title" class="section-display">Good films.<br>Better conversations.</h2>
-                <p class="muted">A place for curious film lovers. Explore a story, keep your own scorecard and share what stayed with you.</p>
-                <p class="small-note">Try our registration form. This student demo checks your details without creating an account. Your name, email and password are not saved or sent.</p>
-                <a class="text-link" href="reviews.html">Read the conversation <span aria-hidden="true"><svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M5 19 19 5M5 5h14v14"/></svg></span></a>
+    <!-- The same sign-in form and main.js are used on all six pages. -->
+    <div class="container">
+        <p id="account-status" class="status" role="status"></p>
+        <section id="signin-panel" class="panel" aria-labelledby="signin-title" hidden>
+            <h2 id="signin-title">Welcome to FRAME</h2>
+            <p class="muted">A local demo profile. Only your name is saved in this browser; this is not a server account.</p>
+            <form id="signin-form">
+                <div class="field">
+                    <label for="signin-name">Your name</label>
+                    <input id="signin-name" type="text" required minlength="2" maxlength="40" autocomplete="given-name">
+                </div>
+                <div class="field">
+                    <label for="signin-email">Email</label>
+                    <input id="signin-email" type="email" required maxlength="254" autocomplete="email" aria-describedby="email-note">
+                    <small id="email-note" class="muted">Checked for a valid format. Never saved or sent.</small>
+                </div>
+                <p id="signin-error" class="error" role="alert"></p>
+                <div class="actions">
+                    <button class="gold" type="submit">Continue</button>
+                    <button id="cancel-signin" type="button">Cancel</button>
+                </div>
+            </form>
+        </section>
+    </div>
+
+    <main id="main-content" class="container">
+        <section class="hero row align-items-center">
+            <div class="col-12 col-md-7 hero-copy">
+                <p class="eyebrow">THE FRAME COLLECTION</p>
+                <h1>Find your<br>next great film.</h1>
+                <p>Space. Dreams. Distant worlds. Start with three stories that take you somewhere else.</p>
+                <div class="actions">
+                    <a class="button gold" href="movies.html">Explore movies</a>
+                    <a href="trailers.html">Watch trailers</a>
+                </div>
+                <p class="eyebrow">A SMALL COLLECTION. A BIG SCREEN EXPERIENCE.</p>
             </div>
-            <div class="col-12 col-lg-7">
-                <form id="registration-form" class="panel-form" novalidate>
-                    <h3>Join the film club</h3>
-                    <p class="field-hint">All fields are required.</p>
-                    <div class="form-grid">
-                    <div class="field">
-        <label for="member-name">Your name</label>
-        <input type="text" id="member-name" required autocomplete="name" maxlength="80" placeholder="Your name" aria-describedby="member-name-error">
-        <p class="field-message" id="member-name-error" aria-live="polite"></p>
-    </div><div class="field">
-        <label for="member-email">Email address</label>
-        <input type="email" id="member-email" required autocomplete="email" maxlength="254" placeholder="you@example.com" aria-describedby="member-email-error">
-        <p class="field-message" id="member-email-error" aria-live="polite"></p>
-    </div>
-                    </div>
-                    <div class="field">
-        <label for="member-password">Password</label>
-        <input type="password" id="member-password" required autocomplete="new-password" maxlength="128" aria-describedby="member-password-error member-password-hint">
-        <p class="field-hint" id="member-password-hint">Use at least 8 characters, including a letter and a number. For Strong, use 12+ characters with uppercase, lowercase, a number and a symbol.</p><p class="field-message" id="member-password-error" aria-live="polite"></p>
-    </div>
-                    <div class="password-strength">
-                        <meter id="password-meter" min="0" max="3" value="0" aria-label="Password strength"></meter>
-                        <span id="password-strength-label" aria-live="polite">Enter a password</span>
-                    </div>
-                    <div class="field">
-        <label for="member-confirm">Confirm password</label>
-        <input type="password" id="member-confirm" required autocomplete="new-password" maxlength="128" aria-describedby="member-confirm-error">
-        <p class="field-message" id="member-confirm-error" aria-live="polite"></p>
-    </div>
-                    <button class="plain-button password-toggle" id="password-toggle" type="button" aria-pressed="false" aria-controls="member-password member-confirm">Show passwords</button>
-                    <div class="form-actions">
-                        <button type="submit" class="btn btn-warning" disabled>Register <span aria-hidden="true"><svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M5 19 19 5M5 5h14v14"/></svg></span></button>
-                        <button type="reset" class="btn btn-outline-light">Clear form</button>
-                    </div>
-                    <p class="form-status" id="registration-status" role="status"></p>
-                </form>
+            <div class="col-12 col-md-5">
+                <figure>
+                    <img src="interstellar.jpg" alt="Interstellar film poster" width="555" height="833">
+                    <figcaption>IN THE SPOTLIGHT · Interstellar, 2014</figcaption>
+                </figure>
             </div>
         </section>
-        </main>
-        <footer class="site-footer">
-            <div class="container footer-content">
-                <div>
-                    <a class="brand footer-brand" href="index.html">
-                        FRAME
-                    </a>
-                    <p class="footer-note">
-                        A small collection of big-screen stories.
-                    </p>
-                    <p class="footer-note">
-                        Demo contact: movieclub@example.com
-                    </p>
+        <section class="home-section">
+            <div class="section-heading"><h2>Inside the collection</h2><span class="muted">03 films, three different worlds</span></div>
+            <div class="grid">
+                <article class="collection-item">
+                    <p class="eyebrow">01 / THE COLLECTION</p>
+                    <h3><a href="movies.html#interstellar">Interstellar</a></h3>
+                    <p>A team of explorers travels beyond our solar system to find a future for humanity. A father holds on to his promise to return home.</p>
+                    <small class="muted">2014 · Christopher Nolan</small>
+                </article>
+                <article class="collection-item">
+                    <p class="eyebrow">02 / THE COLLECTION</p>
+                    <h3><a href="movies.html#inception">Inception</a></h3>
+                    <p>A thief enters dreams to steal secrets. His next assignment changes the rules: he must plant an idea deep inside someone else’s mind.</p>
+                    <small class="muted">2010 · Christopher Nolan</small>
+                </article>
+                <article class="collection-item">
+                    <p class="eyebrow">03 / THE COLLECTION</p>
+                    <h3><a href="movies.html#dune">Dune</a></h3>
+                    <p>Paul Atreides arrives on the desert planet Arrakis. Rival powers fight for its precious resource, and Paul faces an uncertain future.</p>
+                    <small class="muted">2021 · Denis Villeneuve</small>
+                </article>
+            </div>
+        </section>
+        <section class="home-section">
+            <div class="section-heading">
+                <div><p class="eyebrow">KEEP EXPLORING</p><h2>More stories. New worlds.</h2></div>
+                <a class="button gold" href="discover.html">Discover Studio Ghibli</a>
+            </div>
+            <p class="muted">Choose a film from a live collection of animated stories.</p>
+        </section>
+        <section class="home-section" id="faq">
+            <p class="eyebrow">FRAME FAQ</p>
+            <h2>Before the opening scene.</h2>
+            <div>
+                <div class="faq-item">
+                    <button class="faq-question" type="button" aria-expanded="false" aria-controls="answer-1">What can I do on FRAME?<span aria-hidden="true">+</span></button>
+                    <div class="faq-answer" id="answer-1">Explore our three featured films, discover Studio Ghibli titles, open official trailers and try personal ratings and reviews.</div>
                 </div>
-                <div class="footer-links">
-                    <p>
-                        Studio channels
-                    </p>
-                    <a href="https://www.youtube.com/user/WarnerBrosPictures/">
-                        Warner Bros. on YouTube
-                    </a>
-                    <a href="https://www.youtube.com/@paramountpictures">
-                        Paramount on YouTube
-                    </a>
+                <div class="faq-item">
+                    <button class="faq-question" type="button" aria-expanded="false" aria-controls="answer-2">Where do the Discover films come from?<span aria-hidden="true">+</span></button>
+                    <div class="faq-answer" id="answer-2">The Discover page loads real data from the public Studio Ghibli API. Select a title to see its director, year, runtime and description.</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" type="button" aria-expanded="false" aria-controls="answer-3">Will my theme and sign-in survive a refresh?<span aria-hidden="true">+</span></button>
+                    <div class="faq-answer" id="answer-3">Yes. The theme and display name are saved in localStorage in this browser. They also work when you move between FRAME pages.</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" type="button" aria-expanded="false" aria-controls="answer-4">Is the sign-in a real online account?<span aria-hidden="true">+</span></button>
+                    <div class="faq-answer" id="answer-4">It is a local demonstration for this student project. Only your display name is saved. No password is requested, and your email is not saved or sent.</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" type="button" aria-expanded="false" aria-controls="answer-5">Are my ratings and reviews public?<span aria-hidden="true">+</span></button>
+                    <div class="faq-answer" id="answer-5">No. Ratings are saved in your browser. Reviews you add are a page-only demonstration and disappear after reloading. Signing out clears your name but keeps your ratings.</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" type="button" aria-expanded="false" aria-controls="answer-6">Can I watch full movies here?<span aria-hidden="true">+</span></button>
+                    <div class="faq-answer" id="answer-6">FRAME is a movie guide. The Trailers page links to official trailers on YouTube. Full movies are not hosted here.</div>
                 </div>
             </div>
-            <div class="container copyright text-center">
-                © 2026 FRAME · Student movie website. Film artwork belongs to its owners.
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-row">
+                <a class="brand" href="index.html">FRAME</a>
+                <p>AITU · Web Technologies · Group film project</p>
+                <a href="SOURCES.txt">Sources</a>
             </div>
-        </footer>
-        <noscript><p class="container noscript-note">Enable JavaScript to use registration, search, the gallery and your saved ratings.</p></noscript>
-        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous" defer></script>
-        <script src="js/script.js" defer></script>
-    </body>
+            <p class="ai-credit">AI assistance: OpenAI ChatGPT/Codex helped with code, debugging and documentation.
+                <a href="docs/PROJECT_REPORT.pdf">Project report</a></p>
+        </div>
+    </footer>
+
+    <!-- Load jQuery before the scripts that use it. -->
+    <script src="vendor/jquery-3.7.1.min.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
 </html>
