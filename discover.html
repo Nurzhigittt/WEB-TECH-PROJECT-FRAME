@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="FRAME: a student movie guide with films, personal ratings, trailers and reviews.">
+    <title>Discover | FRAME</title>
+    <link rel="stylesheet" href="vendor/bootstrap-5.3.3.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-row">
+                <a class="brand" href="index.html"><span>F</span>FRAME</a>
+                <nav aria-label="Main navigation">
+                <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="movies.html">Movies</a></li>
+                <li><a class="current" aria-current="page" href="discover.html">Discover</a></li>
+                <li><a href="ratings.html">Ratings</a></li>
+                <li><a href="trailers.html">Trailers</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+                </ul>
+                </nav>
+                <div class="actions">
+                    <button id="theme-button" type="button">Light mode</button>
+                    <span id="greeting"></span>
+                    <button id="signin-button" type="button" aria-controls="signin-panel" aria-expanded="false">Sign in</button>
+                    <button id="signout-button" type="button" hidden>Sign out</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <p id="account-status" class="status" role="status"></p>
+        <section id="signin-panel" class="panel" aria-labelledby="signin-title" hidden>
+            <h2 id="signin-title">Welcome to FRAME</h2>
+            <p class="muted">A local demo profile. Only your name is saved in this browser; this is not a server account.</p>
+            <form id="signin-form">
+                <div class="field">
+                    <label for="signin-name">Your name</label>
+                    <input id="signin-name" type="text" required minlength="2" maxlength="40" autocomplete="given-name">
+                </div>
+                <div class="field">
+                  <label for="signin-email">Email</label>
+                  <input id="signin-email" type="email" required maxlength="254" autocomplete="email" aria-describedby="email-note">
+                  <small id="email-note" class="muted">Checked for a valid format. Never saved or sent.</small>
+                </div>
+                <p id="signin-error" class="error" role="alert"></p>
+                <div class="actions">
+                    <button class="gold" type="submit">Continue</button>
+                    <button id="cancel-signin" type="button">Cancel</button>
+                </div>
+            </form>
+        </section>
+    </div>
+
+    <main id="main-content" class="container">
+        <section class="page-intro">
+            <p class="eyebrow">BEYOND THE COLLECTION</p>
+            <h1>A little more wonder.</h1>
+            <p>Explore the films of Studio Ghibli. Pick a title and find your next animated favourite.</p>
+        </section>
+        <div class="discover-layout">
+            <section class="panel" aria-labelledby="choose-film-title">
+                <p class="eyebrow">STUDIO GHIBLI COLLECTION</p>
+                <h2 id="choose-film-title">Pick a story</h2>
+                <div class="field">
+                    <label for="film-select">Film title</label>
+                    <select id="film-select" disabled><option>Loading…</option></select>
+                </div>
+                <button id="refresh-films" class="gold" type="button">Refresh films</button>
+                <p id="api-status" class="status" role="status"></p>
+            </section>
+            <article id="film-details" class="panel film-sheet" aria-live="polite" hidden>
+                <p class="eyebrow">A CLOSER LOOK</p>
+                <h2 id="film-title"></h2>
+                <p id="film-description"></p>
+                <dl class="film-facts">
+                    <div><dt>DIRECTOR</dt><dd id="film-director"></dd></div>
+                    <div><dt>RELEASE YEAR</dt><dd id="film-year"></dd></div>
+                    <div><dt>RUNNING TIME</dt><dd id="film-time"></dd></div>
+                    <div><dt>API RT SCORE</dt><dd id="film-score"></dd></div>
+                </dl>
+            </article>
+        </div>
+        <p class="source-note muted">Data: <a href="https://ghibliapi.vercel.app/">Studio Ghibli API</a>, a community film catalogue. Internet access is required. Scores come from the API and may not reflect current ratings.</p>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-row">
+                <a class="brand" href="index.html">FRAME</a>
+                <p>AITU · Web Technologies · Group film project</p>
+                <a href="SOURCES.txt">Sources</a>
+            </div>
+            <p class="ai-credit">AI assistance: OpenAI ChatGPT/Codex helped with code, debugging and documentation.
+                <a href="docs/PROJECT_REPORT.pdf">Project report</a></p>
+        </div>
+    </footer>
+
+    <script src="vendor/jquery-3.7.1.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/discover.js"></script>
+</body>
+</html>
