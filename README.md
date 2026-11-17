@@ -25,4 +25,4 @@ or passwords. Ratings remain after reload; added reviews do not.
 documentation. Sources are listed in `SOURCES.txt`. The group must confirm its
 actual individual Final contributions in the report before submission.
 
-This package has not been committed, pushed or deployed. See `HANDOFF_RU.txt`.
+The project source and documentation are maintained in this repository.
