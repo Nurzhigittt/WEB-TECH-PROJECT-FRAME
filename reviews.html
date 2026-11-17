@@ -1,214 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="FRAME movie guide: film information, sample ratings, official trailers and short reviews.">
-        <title>
-            Reviews | FRAME
-        </title>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap">
-        <link rel="stylesheet" href="css/style.css">
-    </head>
-    <body>
-        <a class="skip-link" href="#main-content">Skip to content</a>
-        <header class="site-header">
-            <div class="container header-content">
-                <a class="brand" href="index.html">
-                    <span class="brand-mark">
-                        F
-                    </span>
-                    FRAME
-                </a>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="FRAME: a student movie guide with films, personal ratings, trailers and reviews.">
+    <title>Reviews | FRAME</title>
+    <link rel="stylesheet" href="vendor/bootstrap-5.3.3.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-row">
+                <a class="brand" href="index.html"><span>F</span>FRAME</a>
                 <nav aria-label="Main navigation">
-                    <ul class="nav-list">
-                        <li>
-                            <a href="index.html">
-                                Home
-                            </a>
-                        </li>
-                        <li>
-                            <a href="movies.html">
-                                Movies
-                            </a>
-                        </li>
-                        <li>
-                            <a href="ratings.html">
-                                Ratings
-                            </a>
-                        </li>
-                        <li>
-                            <a href="trailers.html">
-                                Trailers
-                            </a>
-                        </li>
-                        <li>
-                            <a class="current" aria-current="page" href="reviews.html">
-                                Reviews
-                            </a>
-                        </li>
-                    <li><a class="nav-join" href="index.html#join">Join the club <span aria-hidden="true"><svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M5 19 19 5M5 5h14v14"/></svg></span></a></li>
+                    <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="movies.html">Movies</a></li>
+                <li><a href="discover.html">Discover</a></li>
+                <li><a href="ratings.html">Ratings</a></li>
+                <li><a href="trailers.html">Trailers</a></li>
+                <li><a class="current" aria-current="page" href="reviews.html">Reviews</a></li>
                     </ul>
                 </nav>
+                <div class="actions">
+                    <button id="theme-button" type="button">Light mode</button>
+                    <span id="greeting"></span>
+                    <button id="signin-button" type="button" aria-controls="signin-panel" aria-expanded="false">Sign in</button>
+                    <button id="signout-button" type="button" hidden>Sign out</button>
+                </div>
             </div>
-        </header>
-        <main class="container" id="main-content">
-            <section class="page-intro">
-                <p class="eyebrow">
-                    AFTER THE CREDITS
-                </p>
-                <h1>
-                    Reviews
-                </h1>
-                <p>
-                    A few thoughts on the stories, the atmosphere and what stays with you.
-                </p>
+        </div>
+    </header>
+
+    <!-- The same sign-in form and main.js are used on all six pages. -->
+    <div class="container">
+        <p id="account-status" class="status" role="status"></p>
+        <section id="signin-panel" class="panel" aria-labelledby="signin-title" hidden>
+            <h2 id="signin-title">Welcome to FRAME</h2>
+            <p class="muted">A local demo profile. Only your name is saved in this browser; this is not a server account.</p>
+            <form id="signin-form">
+                <div class="field">
+                    <label for="signin-name">Your name</label>
+                    <input id="signin-name" type="text" required minlength="2" maxlength="40" autocomplete="given-name">
+                </div>
+                <div class="field">
+                    <label for="signin-email">Email</label>
+                    <input id="signin-email" type="email" required maxlength="254" autocomplete="email" aria-describedby="email-note">
+                    <small id="email-note" class="muted">Checked for a valid format. Never saved or sent.</small>
+                </div>
+                <p id="signin-error" class="error" role="alert"></p>
+                <div class="actions">
+                    <button class="gold" type="submit">Continue</button>
+                    <button id="cancel-signin" type="button">Cancel</button>
+                </div>
+            </form>
+        </section>
+    </div>
+
+    <main id="main-content" class="container">
+        <section class="page-intro">
+            <p class="eyebrow">AFTER THE CREDITS</p>
+            <h1>What stayed with you?</h1>
+            <p>Read a few sample thoughts, then try writing your own short review.</p>
+        </section>
+        <div class="split">
+            <section aria-label="Sample film reviews">
+                <article class="review-sample" id="interstellar-review">
+                    <p class="eyebrow">INTERSTELLAR · SAMPLE REVIEW</p>
+                    <h3>Big ideas, a personal story.</h3>
+                    <p class="muted">The scale of space exploration is impressive, but the relationship between a father and daughter makes the journey memorable.</p>
+                </article>
+                <article class="review-sample" id="inception-review">
+                    <p class="eyebrow">INCEPTION · SAMPLE REVIEW</p>
+                    <h3>A puzzle worth following.</h3>
+                    <p class="muted">The layered dreams reward attention. The film turns a familiar heist structure into a question about memory and reality.</p>
+                </article>
+                <article class="review-sample" id="dune-review">
+                    <p class="eyebrow">DUNE · SAMPLE REVIEW</p>
+                    <h3>A world built through atmosphere.</h3>
+                    <p class="muted">The landscapes, costumes and sound create a convincing world. Its measured pace gives the setting room to breathe.</p>
+                </article>
             </section>
-            <!-- Week 4: Bootstrap columns stack below the large breakpoint. -->
-            <div class="row">
-                <section class="col-12 col-lg-7 reviews-list">
-                    <article class="review-item" id="interstellar-review">
-                        <div class="review-heading">
-                            <h2>
-                                Interstellar
-                            </h2>
-                            <span class="rating-score">
-                                9.0 / 10
-                            </span>
-                        </div>
-                        <p>
-                            The scale of space makes the family story feel even more personal. The music and quiet moments stayed with me long after the ending.
-                        </p>
-                        <span class="muted">
-                            Sample editorial review
-                        </span>
-                    </article>
-                    <article class="review-item" id="inception-review">
-                        <div class="review-heading">
-                            <h2>
-                                Inception
-                            </h2>
-                            <span class="rating-score">
-                                8.8 / 10
-                            </span>
-                        </div>
-                        <p>
-                            The changing dream worlds make every scene worth watching closely. It is a satisfying choice when you want a film to discuss afterwards.
-                        </p>
-                        <span class="muted">
-                            Sample editorial review
-                        </span>
-                    </article>
-                    <article class="review-item" id="dune-review">
-                        <div class="review-heading">
-                            <h2>
-                                Dune
-                            </h2>
-                            <span class="rating-score">
-                                8.3 / 10
-                            </span>
-                        </div>
-                        <p>
-                            The desert landscapes and sound create a powerful atmosphere. The slower pace gives the world room to develop, although this is only the beginning of the story.
-                        </p>
-                        <span class="muted">
-                            Sample editorial review
-                        </span>
-                    </article>
-                <section class="personal-reviews" aria-labelledby="personal-reviews-title"><p class="eyebrow">YOUR OWN TAKE</p><h2 id="personal-reviews-title">Saved on this device</h2><div id="personal-reviews-list"></div></section></section>
-                <section class="col-12 col-lg-5">
-                    <div class="review-form-box">
-                        <p class="eyebrow">
-                            YOUR POINT OF VIEW
-                        </p>
-                        <h2 id="form-title">
-                            Write a review
-                        </h2>
-                        <p id="form-note" class="muted">
-                            Your review stays in this browser. It is not posted publicly. All fields are required.
-                        </p>
-                        <form id="review-form" novalidate>
-                            <label for="reviewer">
-                                Your name
-                            </label>
-                            <input type="text" id="reviewer" placeholder="Enter your name" autocomplete="name" maxlength="80" required aria-describedby="reviewer-error"><p id="reviewer-error" class="field-message" aria-live="polite"></p>
-                            <label for="review-email">Email address</label><input type="email" id="review-email" placeholder="you@example.com" autocomplete="email" maxlength="254" required aria-describedby="review-email-error review-email-hint"><p id="review-email-hint" class="field-hint">Used for validation only. Never saved or displayed.</p><p id="review-email-error" class="field-message" aria-live="polite"></p>
-                            <label for="movie">
-                                Movie
-                            </label>
-                            <select id="movie" required>
-                                <option>
-                                    Interstellar
-                                </option>
-                                <option>
-                                    Inception
-                                </option>
-                                <option>
-                                    Dune
-                                </option>
-                            </select>
-                            <label for="score">
-                                Your rating
-                            </label>
-                            <select id="score" required aria-describedby="score-error">
-                                <option value="">
-                                    Choose a score
-                                </option>
-                                <option value="1">1 / 10</option>
-                                <option value="2">2 / 10</option>
-                                <option value="3">3 / 10</option>
-                                <option value="4">4 / 10</option>
-                                <option value="5">5 / 10</option>
-                                <option value="6">6 / 10</option>
-                                <option value="7">7 / 10</option>
-                                <option value="8">8 / 10</option>
-                                <option value="9">9 / 10</option>
-                                <option value="10">10 / 10</option>
-                            </select>
-                            <p id="score-error" class="field-message" aria-live="polite"></p><label for="review">
-                                Your review
-                            </label>
-                            <textarea id="review" rows="5" maxlength="1000" required placeholder="What did you think of the film?" aria-describedby="review-error review-length"></textarea><p id="review-length" class="field-hint">0 / 1000 characters</p><p id="review-error" class="field-message" aria-live="polite"></p><button type="submit" class="btn btn-warning mt-3" disabled>Save review</button>
-                            <button type="reset" class="btn btn-outline-light mt-3">
-                                Clear form
-                            </button>
-                        <p id="review-status" class="form-status" role="status"></p></form>
-                    </div>
-                </section>
+            <section class="panel" aria-labelledby="write-review-title">
+                <h2 id="write-review-title">Your take</h2>
+                <p class="muted">A page-only demo: added reviews disappear when you reload.</p>
+                <form id="review-form">
+                    <div class="field"><label for="review-name">Your name</label><input id="review-name" required minlength="2" maxlength="40" autocomplete="given-name"></div>
+                    <div class="field"><label for="review-movie">Film</label><select id="review-movie"><option>Interstellar</option><option>Inception</option><option>Dune</option></select></div>
+                    <div class="field"><label for="review-text">Your review</label><textarea id="review-text" rows="5" required minlength="10" maxlength="600"></textarea></div>
+                    <button class="gold" type="submit">Add review</button>
+                    <p id="review-status" class="status" role="status"></p>
+                </form>
+            </section>
+        </div>
+        <section class="mt-5" aria-labelledby="my-reviews-title"><h2 id="my-reviews-title">Your reviews this visit</h2><div id="my-reviews"></div></section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-row">
+                <a class="brand" href="index.html">FRAME</a>
+                <p>AITU · Web Technologies · Group film project</p>
+                <a href="SOURCES.txt">Sources</a>
             </div>
-        <dialog id="delete-review-dialog" class="form-dialog confirm-dialog" aria-labelledby="delete-review-title"><h2 id="delete-review-title">Delete your review?</h2><p id="delete-review-description"></p><div class="form-actions"><button type="button" class="btn btn-outline-light" data-close="delete-review-dialog" autofocus>Keep review</button><button type="button" class="btn btn-danger" id="confirm-delete-review">Delete review</button></div></dialog></main>
-        <footer class="site-footer">
-            <div class="container footer-content">
-                <div>
-                    <a class="brand footer-brand" href="index.html">
-                        FRAME
-                    </a>
-                    <p class="footer-note">
-                        A small collection of big-screen stories.
-                    </p>
-                    <p class="footer-note">
-                        Demo contact: movieclub@example.com
-                    </p>
-                </div>
-                <div class="footer-links">
-                    <p>
-                        Studio channels
-                    </p>
-                    <a href="https://www.youtube.com/user/WarnerBrosPictures/">
-                        Warner Bros. on YouTube
-                    </a>
-                    <a href="https://www.youtube.com/@paramountpictures">
-                        Paramount on YouTube
-                    </a>
-                </div>
-            </div>
-            <div class="container copyright text-center">
-                © 2026 FRAME · Student movie website. Film artwork belongs to its owners.
-            </div>
-        </footer>
-        <noscript><p class="container noscript-note">Enable JavaScript to use registration, search, the gallery and your saved ratings.</p></noscript>
-        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous" defer></script>
-        <script src="js/script.js" defer></script>
-    </body>
+            <p class="ai-credit">AI assistance: OpenAI ChatGPT/Codex helped with code, debugging and documentation.
+                <a href="docs/PROJECT_REPORT.pdf">Project report</a></p>
+        </div>
+    </footer>
+
+    <!-- Load jQuery before the scripts that use it. -->
+    <script src="vendor/jquery-3.7.1.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/reviews.js"></script>
+</body>
 </html>
