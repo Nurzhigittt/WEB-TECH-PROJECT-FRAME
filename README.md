@@ -1,36 +1,28 @@
-# FRAME Movie Website
+# FRAME — Movie Guide
 
-**Topic:** an interactive movie guide.
+AITU Web Technologies Final project, continuing our Endterm film website.
 
-FRAME is our Web Technologies project about Interstellar, Inception and Dune. It extends our midterm website with JavaScript and jQuery features for the endterm.
+**Group:** Duiset Nurzhigit, Seitkapar Magzhan, Korganbek Madiyar.
 
-**Website:** [Open FRAME](https://nurzhigittt.github.io/WEB-TECH-PROJECT-FRAME/)
+**Pages:** Home, Movies, Discover, Ratings, Trailers and Reviews.
 
-**Repository:** [WEB-TECH-PROJECT-FRAME](https://github.com/Nurzhigittt/WEB-TECH-PROJECT-FRAME)
+**Features:** responsive layout; saved light/dark theme; validated local sign-in
+and sign-out; six jQuery FAQ questions; Studio Ghibli API with film selection,
+refresh and error handling; movie search; saved ratings; page-only reviews.
 
-## Pages
+**Run:** open `index.html` with VS Code Live Server. No installation or build.
+Bootstrap, jQuery and posters are included. API and trailer links need internet.
 
-Home, Movies, Ratings, Trailers and Reviews.
+- Repository: https://github.com/Nurzhigittt/WEB-TECH-PROJECT-FRAME
+- GitHub Pages target: https://nurzhigittt.github.io/WEB-TECH-PROJECT-FRAME/
+- Report: `docs/PROJECT_REPORT.pdf` (editable version: `.html`).
+- Code explanation in Russian: `DEFENSE_RU.md`.
 
-## Features
+The sign-in is a browser-only demo: it stores only a display name, never email
+or passwords. Ratings remain after reload; added reviews do not.
 
-- Registration form with required fields, RegEx email validation, a password strength indicator, matching passwords and live feedback.
-- Case-insensitive live movie search combined with genre filters.
-- Dynamic ratings table with add, view, edit and delete operations, including deletion confirmation.
-- Responsive Bootstrap poster gallery with a lightbox, navigation arrows and jQuery fade effects.
-- Personal reviews with form validation.
-- Ratings and reviews saved in the browser using localStorage.
-- Responsive layout for desktop, tablet and mobile.
+**AI credit:** OpenAI ChatGPT/Codex assisted with code, debugging, testing and
+documentation. Sources are listed in `SOURCES.txt`. The group must confirm its
+actual individual Final contributions in the report before submission.
 
-## Technologies
-
-HTML5, CSS3, Bootstrap 5.3.3, JavaScript, jQuery 3.7.1 and GitHub Pages. Bootstrap and jQuery are loaded through CDN links. Application code is in `js/script.js`.
-
-## Group members and contributions
-
-| Group member | Contribution |
-| --- | --- |
-| Duiset Nurzhigit | Home and Movies pages, navigation menu. |
-| Seitkapar Magzhan | Ratings and Trailers pages, ratings table. |
-| Korganbek Madiyar | Reviews page, form and responsive styles. |
-
+This package has not been committed, pushed or deployed. See `HANDOFF_RU.txt`.
