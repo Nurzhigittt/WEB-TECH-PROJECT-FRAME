@@ -15,7 +15,7 @@ Bootstrap, jQuery and posters are included. API and trailer links need internet.
 
 - Repository: https://github.com/Nurzhigittt/WEB-TECH-PROJECT-FRAME
 - Website: https://nurzhigittt.github.io/WEB-TECH-PROJECT-FRAME/
-- Report: `docs/PROJECT_REPORT.pdf` (editable version: `.html`).
+- Report: docs/PROJECT_REPORT.pdf
 
 The sign-in is a browser-only demo: it stores only a display name, never email
 or passwords. Ratings remain after reload; added reviews do not.
